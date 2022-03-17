@@ -28,10 +28,64 @@ body{
 
 }
 
-  .hero-img{
+.hero-img{
     background: url("../assets/bg.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     width: 100vw;
     height: 100vh;
+}
+.nav-section{
+    margin: 0 !important;
+}
+.logo{
+    width: 25%;
+    position: relative;
+    top: -3vw;
+}
+i{
+    color: #ECA442;
+}
+.socials{
+    margin-left: 8%;
+    padding-left: 18% !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen  and (max-width: 767px){
+    .socials{
+        display: none;
+    }
+    .nav-section{
+        display: flex;
+        justify-content: space-between;
+    }
+    .fa-bars{
+        max-width: 25%;
+        padding: 0;
+    }
+    .logo{
+        top: 0vw;
+    }
+}
+@media screen  and (max-width: 872px){
+    .socials{
+        margin-left: 8%;
+        padding-left: 15% !important;
+    }
 }
