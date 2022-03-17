@@ -1,1 +1,2 @@
-# moz-pizza-place
+# Project Name
+moz-pizza-place
