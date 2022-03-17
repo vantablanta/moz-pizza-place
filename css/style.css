@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 body{
     margin: 0;
     padding: 0;
     background-color: #0a0a0a; 
+    font-family: 'Fredoka', sans-serif;
 }
 .preload-container{
     overflow: hidden !important;
@@ -39,16 +41,20 @@ body{
     margin: 0 !important;
 }
 .logo{
-    width: 25%;
     position: relative;
-    top: -3vw;
+    top: -5vw;
 }
 i{
     color: #ECA442;
 }
 .socials{
-    margin-left: 8%;
     padding-left: 18% !important;
+}
+.row{
+    height: 25%;
+}
+.text{
+    color: #ffffff;
 }
 
 
@@ -66,10 +72,10 @@ i{
 
 
 
-
-@media screen  and (max-width: 767px){
+@media screen  and (max-width: 875px){
     .socials{
         display: none;
+        padding-left: 16% !important;
     }
     .nav-section{
         display: flex;
@@ -80,12 +86,12 @@ i{
         padding: 0;
     }
     .logo{
-        top: 0vw;
+        width: 25%;
+        top: -2vw;
     }
-}
-@media screen  and (max-width: 872px){
-    .socials{
-        margin-left: 8%;
-        padding-left: 15% !important;
+    .text{
+        position: relative;
+        top: -3vw;
     }
+
 }
