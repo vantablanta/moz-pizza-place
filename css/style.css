@@ -1,7 +1,37 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #0a0a0a; 
 }
-#pre-loader{
-    
+.preload-container{
+    overflow: hidden !important;
+    height: 100vh;
+    text-align: center;
+}
+#preload-img{
+    padding: 0;
+}
+.preload-div{
+    border: 2px dashed;
+    padding: 0;
+    animation-name: line;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes line {
+  0%   {color:#ECA442; width: 25%}
+  25%  {color:#CA2521; width: 50% }
+  50%  {color:#A5A79A; width: 25%}
+  75%  { color:#61120E;width: 50%}
+  100% {color:#ECA442; width: 25%}
+
+}
+
+  .hero-img{
+    background: url("../assets/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
 }
