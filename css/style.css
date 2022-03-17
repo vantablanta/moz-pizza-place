@@ -2,7 +2,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #0a0a0a; 
+    background-color: #000000; 
     font-family: 'Fredoka', sans-serif;
 }
 .preload-container{
@@ -55,6 +55,33 @@ i{
 }
 .text{
     color: #ffffff;
+}
+.fade-bg{
+    background-color: #61120E;
+    opacity: 0.1;
+}
+.nav-menu{
+    display: none;
+    background-color: #ECA442;
+    color:#A5A79A;
+    position: relative;
+    left: -10vw;
+    top: 1vw;
+    height: 100vh;
+    width: 50vw;
+
+    
+}
+.nav-menu-show{
+    display: block;
+}
+li{
+    padding: 2vw;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #A5A79A;
 }
 
 
