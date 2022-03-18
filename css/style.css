@@ -5,6 +5,7 @@ body{
     background-color: #000000; 
     font-family: 'Fredoka', sans-serif;
 }
+/*preloader*/
 .preload-container{
     overflow: hidden !important;
     height: 100vh;
@@ -29,51 +30,39 @@ body{
   100% {color:#ECA442; width: 25%}
 
 }
-
-.hero-img{
-    background: url("../assets/bg.jpg");
-    background-size: cover;
-    background-position: top center;
-    width: 100vw;
-    height: 100vh;
+/*hero-section*/
+.hero-section{
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 !important;
+    padding: 0!important;
 }
+.bg-img{
+    position: absolute;
+    
+}
+/*nav-section*/
 .nav-section{
     margin: 0 !important;
+    position: relative;
+}
+i{
+    color: #ECA442;
 }
 .logo{
     position: relative;
     top: -5vw;
 }
-i{
-    color: #ECA442;
-}
 .socials{
     padding-left: 18% !important;
-}
-.row{
-    height: 25%;
-}
-.text{
-    color: #ffffff;
-}
-.fade-bg{
-    background-color: #61120E;
-    opacity: 0.1;
-}
-.nav-menu{
-    display: none;
-    background-color: #ECA442;
-    color:#A5A79A;
     position: relative;
-    left: -10vw;
-    top: 1vw;
-    height: 100vh;
-    width: 50vw;
-
-    
+    right: -5vw !important;
 }
-.nav-menu-show{
-    display: block;
+.hero-text{
+    color: #ffffff;
+    position: relative;
+    top: -20vw;
 }
 li{
     padding: 2vw;
@@ -81,7 +70,32 @@ li{
 }
 a{
     text-decoration: none;
-    color: #A5A79A;
+    color: #ECA442;
+
+}
+.times{
+    display: none;
+    font-size: 50px;
+    color: #ECA442;
+}
+.nav-menu{
+    display: none;
+    flex-direction: row-reverse;
+    padding-left: -10%;
+}
+
+
+
+
+
+/*Js Classes*/
+
+.fade-bg{
+    background-color: #61120E;
+    opacity: 0.6;
+}
+.nav-menu-show{
+    display: block;
 }
 
 
@@ -99,26 +113,28 @@ a{
 
 
 
-@media screen  and (max-width: 875px){
+@media screen  and (max-width: 772px){
     .socials{
         display: none;
-        padding-left: 16% !important;
+        padding-left: 10% !important;
     }
     .nav-section{
         display: flex;
         justify-content: space-between;
+        flex-direction: row-reverse;
     }
     .fa-bars{
-        max-width: 25%;
-        padding: 0;
+        width: 25%;
+        padding: 10vw;
+        position: relative;
+        right: -13vw;
     }
     .logo{
-        width: 25%;
-        top: -2vw;
+        width: 50%;
+        top: -5vw;
+        left: -17vw;
     }
-    .text{
-        position: relative;
-        top: -3vw;
+    .hero-text{
+        display: none;
     }
-
 }
