@@ -2,8 +2,8 @@ $(document).ready(function(){
     function preLoader (){
         $(".preload-container").show()
         $(".hero-img").hide()
-        $(".preload-container").fadeOut(100) 
-        $(".hero-img").fadeIn(100)
+        $(".preload-container").fadeOut(00) 
+        $(".hero-img").fadeIn(00)
     }
     preLoader()
 
@@ -13,11 +13,18 @@ $(document).ready(function(){
         $(this).hide()
         $(".times").show()
         $(".nav-menu").show()
+        if($(window).width() <= 772){
+            $(".socials").hide() 
+            $(".logo").hide()
+            $(".hero-text").hide()
+        }else{
+            $(".socials").show()
+            $(".logo").show()
+        }
         $(".logo").hide()
         $(".socials").hide()
         $(".bg-img").animate({marginLeft: "50%"})
-        $("ul").prepend("<p class='nav-text'> Welcome to Moz Pizza Place </p>").stop()
-
+        $("ul").prepend("<p class='nav-text'> Welcome to Moz Pizza Place </p>")// bug is here//
     })
     $(".times").click(function(){
         $(".times").hide()
@@ -25,16 +32,17 @@ $(document).ready(function(){
         $(".fa-bars").show()
         $(".nav-menu").hide()
         $(".bg-img").animate({marginLeft: "0"})
-        $(".logo").show()
         if($(window).width() <= 772){
             $(".socials").hide() 
+            $(".logo").hide()
+            $(".hero-text").show()
         } else{
             $(".socials").show()
+            $(".logo").show()
+            $(".hero-text").hide()
         }
         
     })
     
-
-
 
 })

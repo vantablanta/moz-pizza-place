@@ -19,37 +19,93 @@
     <script src="./js/script-bl.js"></script>
 </head>
 <body>
-    <div class="container-fluid preload-container">
-        <div class="p-3">
+    <section class="container-fluid preload-container">
+         <div class="p-3">
             <img class="img-fluid" id="preload-img"src="./assets/logo.png" alt="Pre Loading Logo">
             <div class="preload-div position-absolute top-55 start-50 translate-middle"></div>
         </div>
-    </div>
-
-    
+    </section>
    
-    <section class="container-fluid hero-section">
-        <img src="./assets/bg.jpg" class="bg-img img-fluid" alt="" srcset="">
+    <section class="container-fluid hero-container">
         <div class="row nav-section">
-            <i class="fa fa-bars fs-1 col-md-4 p-3" aria-hidden="true"></i>
-            <div class="times col-md-4 p-1">&times;</div>
-            <img class="col-md-4 img-fluid logo" src="./assets/preloader.png" alt="logo">
-            <div class="socials col-md-4 p-3">
+            <div class="col-sm-4">
+                <i class="fa fa-bars fs-1 p-3" aria-hidden="true"></i>
+                <div class="times p-1">&times;</div>
+                <div class="nav-menu">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#home"> Menu</a></li>
+                        <li><a href="#home">References</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="col-sm-4 d-flex">
+                <img class="img-fluid logo" src="./assets/preloader.png" alt="logo">
+                <div>
+                    <h1 class="text-center fs-1 hero-text">Moz Pizza Place</h1>
+                    <p class="text-center fs-3 hero-text">Delicious & Fresh</p>
+                </div>
+            </div>
+            <div class="socials col-sm-4">
                 <i class="fa fa-phone fs-3 p-2"></i>
                 <i class="fa fa-envelope fs-3 p-2"></i>
             </div>
-            <p class="text-center fs-1 hero-text p-3">Moz Pizza Place</p>
+    
         </div>
-        <div class="nav-menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#home"> Menu</a></li>
-                <li><a href="#home">References</a></li>
-            </ul>
+    </section>
+
+    <section class="container-fluid menu" id="menu">
+        <div class="row p-5">
+            <img src="./assets/flavours/meat.jpg" class="col-md-4 img-fluid" alt="" srcset="">
+            <img src="./assets/flavours/cheese.jpg" class="col-md-4 img-fluid" alt="" srcset="">
+            <img src="./assets/flavours/hawaian.jpg" class="col-md-4 img-fluid" alt="" srcset="">
+        </div>
+        <div class="row p-5">
+            <img src="./assets/flavours/veggie.jpg" class="col-md-4 img-fluid" alt="" srcset="">
+            <img src="./assets/flavours/bbq-chicken.jpg" class="col-md-4 img-fluid" alt="" srcset="">
+            <img src="./assets/flavours/pepperoni.jpg" class="col-md-4 img-fluid" alt="" srcset="">
+        </div>
+    </section>
+
+    <section class="container-fluid reviews p-3 position-relative">
+        <h4 class="text-center m-5 fs-1">Client Reviews</h4>
+        <div class="row">
+            <div class="col-md-4 rounded row">
+                <img src="./assets/avatar.png" class="img-fluid rounded-circle avatar col">
+                <p class="col">The best pizza we ever had in (City)!! 
+                    The pizza was so delicious 
+                    and with so many flavor could 
+                    choose that we even visited the pizza 
+                    shop twice in the same day!
+                    You could just take away or standing f
+                    inish your pizza in the store.
+                </p>
+            </div>
+            <div class="col-md-4  rounded row">
+                <img src="./assets/avatar.png"class="img-fluid rounded-circle avatar col" >
+                <p class="col">The best pizza we ever had in (City)!! 
+                    The pizza was so delicious 
+                    and with so many flavor could 
+                    choose that we even visited the pizza 
+                    shop twice in the same day!
+                    You could just take away or standing f
+                    inish your pizza in the store.
+                </p>
+            </div>
+            <div class="col-md-4 rounded row">
+                <img src="./assets/avatar.png" class="img-fluid rounded-circle avatar col">
+                <p class="col">The best pizza we ever had in (City)!! 
+                    The pizza was so delicious 
+                    and with so many flavor could 
+                    choose that we even visited the pizza 
+                    shop twice in the same day!
+                    You could just take away or standing f
+                    inish your pizza in the store.
+                </p>
+            </div>
         </div>
         
-
-    
     </section>
 
 </body>
