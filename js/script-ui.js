@@ -79,6 +79,15 @@ $(document).ready(function(){
     $(".orderBtn3").on('click', function(){
         $(".modal-title").text('Cheese Pizza')
     })
+    $(".orderBtn4").on('click', function(){
+        $(".modal-title").text('Veggie Pizza')
+    })
+    $(".orderBtn5").on('click', function(){
+        $(".modal-title").text('BBQ Chicken Pizza')
+    })
+    $(".orderBtn6").on('click', function(){
+        $(".modal-title").text('Pepperoni Pizza')
+    })
 })
 
    
