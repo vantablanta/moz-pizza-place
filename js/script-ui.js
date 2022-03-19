@@ -7,42 +7,84 @@ $(document).ready(function(){
     }
     preLoader()
 
-    $(".fa-bars").click(function(){
-        $(".bg-img").addClass("fade-bg")
-        $(".hero-section").addClass("hero-size")
-        $(this).hide()
-        $(".times").show()
-        $(".nav-menu").show()
-        if($(window).width() <= 772){
-            $(".socials").hide() 
-            $(".logo").hide()
-            $(".hero-text").hide()
-        }else{
-            $(".socials").show()
-            $(".logo").show()
-        }
-        $(".logo").hide()
-        $(".socials").hide()
-        $(".bg-img").animate({marginLeft: "50%"})
-        $("ul").prepend("<p class='nav-text'> Welcome to Moz Pizza Place </p>")// bug is here//
+
+
+
+    $("#meat").on('click', function(){
+       // $(".modal").show()
     })
-    $(".times").click(function(){
-        $(".times").hide()
-        $(".bg-img").removeClass("fade-bg")
-        $(".fa-bars").show()
-        $(".nav-menu").hide()
-        $(".bg-img").animate({marginLeft: "0"})
-        if($(window).width() <= 772){
-            $(".socials").hide() 
-            $(".logo").hide()
-            $(".hero-text").show()
-        } else{
-            $(".socials").show()
-            $(".logo").show()
-            $(".hero-text").hide()
-        }
+
+    $("#meat").mouseover(function(){
+        $(this).addClass("menu-img")
+        
+    }) 
+    $("#meat").mouseout(function(){
+        $(this).removeClass("menu-img")
+        
+    }) 
+    $("#hawaian").mouseover(function(){
+        $(this).addClass("menu-img")
         
     })
+    $("#hawaian").mouseout(function(){
+        $(this).removeClass("menu-img")
+        
+    })
+    $("#cheese").mouseover(function(){
+        $(this).addClass("menu-img")
+        
+    }) 
+    $("#cheese").mouseout(function(){
+        $(this).removeClass("menu-img")
+        
+    }) 
+    $("#pepperoni").mouseover(function(){
+        $(".menu-text").show()
+        $(this).addClass("menu-img")
+        
+    })
+    $("#pepperoni").mouseout(function(){
+        $(".menu-text").hide()
+        $(this).removeClass("menu-img")
+        
+    }) 
+    $("#bbqChicken").mouseover(function(){
+        $(".menu-text").show()
+        $(this).addClass("menu-img")
+        
+    })
+    $("#bbqChicken").mouseout(function(){
+        $(".menu-text").hide()
+        $(this).removeClass("menu-img")
+        
+    })
+    $("#veggie").mouseover(function(){
+        $(".menu-text").show()
+        $(this).addClass("menu-img")
+        
+    })
+    $("#veggie").mouseout(function(){
+        $(".menu-text").hide()
+        $(this).removeClass("menu-img")
+        
+    }) 
     
 
+    $(".orderBtn1").on('click', function(){
+        $(".modal-title").text('Meat Pizza')
+    })
+    $(".orderBtn2").on('click', function(){
+        $(".modal-title").text('Hawaian Pizza')
+    })
+    $(".orderBtn3").on('click', function(){
+        $(".modal-title").text('Cheese Pizza')
+    })
 })
+
+   
+
+
+
+
+
+
