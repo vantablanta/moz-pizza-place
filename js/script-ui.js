@@ -89,6 +89,32 @@ $(document).ready(function(){
     $(".orderBtn6").on('click', function(){
         $(".modal-title").text('Pepperoni Pizza')
     })
+
+    $("#modalSubmit").click( function(){
+        formSubmit(e => e.preventDefault())
+    })
+    function formSubmit(){
+        
+        let crust = $('input[name=crust]:checked', 'form').val()
+        let toppings = new Array
+        $('input[name=size]:checked', 'form').map(function(){
+            toppings.push($(this).val() )
+        })
+        let size = $('input[name=size]:checked', 'form').val()
+        let delivery = $('input[name=delivery]:checked', 'form').val()
+        let quantity = $('#pizzaQuantity' , 'form').val()
+
+        console.log(quantity)
+
+
+        
+
+       
+    }
+
+
+
+
 })
 
    

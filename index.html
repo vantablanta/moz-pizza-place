@@ -220,6 +220,9 @@
         </div>
     </section>
 
+
+    <!--<div id="totalPrice"></div>-->
+
     <!-- Modal -->
     <div class="modal fade" id="orderModal" class="orderModal" tabindex="-1" aria-labelledby="orderModal"
         aria-hidden="true">
@@ -229,6 +232,7 @@
                     <h5 class="modal-title" id="orderModal"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
                     <form class="row g-3">
                         <div class="col-md-12 form-group p-2">
@@ -253,20 +257,20 @@
                         <div class="col-md-12 form-group p-2">
                             <div>Select Toppings</div>
                             <div id="toppings">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="extraCheese" value="100">
+                                <div class="form-check form-check-inline" required>
+                                    <input class="form-check-input" name ="size" type="checkbox" id="extraCheese" value="100">
                                     <label class="form-check-label" for="extraCheese">Extra Cheese</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="pepperoni" value="80">
+                                    <input class="form-check-input" name ="size" type="checkbox" id="pepperoni" value="80">
                                     <label class="form-check-label" for="pepperoni">Pepperoni</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="bacon" value="100">
+                                    <input class="form-check-input" name ="size" type="checkbox" id="bacon" value="100">
                                     <label class="form-check-label" for="bacon">Bacon</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="mushroom" value="100">
+                                    <input class="form-check-input" name ="size" type="checkbox" id="mushroom" value="100">
                                     <label class="form-check-label" for="mushroom">Mushroom</label>
                                 </div>
                             </div>
@@ -307,19 +311,16 @@
                         </div>
 
                         <div class="col-md-12 form-group p-2">
-                            <div>Enter Quantity</div>
-                            <div id="quantity">
-                                <input type="number" class="form-control" id="quantity" required min="1" max="100">
-                            </div>
+                            <label class="form-label" for="pizzaQuantity">Number of Pizza</label>
+                            <input type="number" class="form-control" id="pizzaQuantity" required min="1" max="100">
                         </div>
 
-                        <div id="totalPrice"></div>
+                        <button type="submit" class="btn btn-success" id="modalSubmit">Submit</button>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Submit</button>
 
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>  
                 </div>
             </div>
         </div>
