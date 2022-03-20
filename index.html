@@ -37,14 +37,13 @@
 </head>
 
 <body>
-    <section class="container-fluid preload-container">
-        <div class="p-3">
+    <section class="preload-container" style="display: none;">
+        <div class="m-5">
             <img class="img-fluid" id="preload-img" src="./assets/logo.png" alt="Pre Loading Logo">
-            <!--<div class="preload-div position-absolute top-55 start-50 translate-middle"></div>-->
         </div>
     </section>
 
-    <section class="container-fluid hero-container row" id="home">
+    <section class="container-fluid hero-container row" id="home" >
         <nav class="navbar navbar-light bg-warning fixed-top">
               <a class="navbar-brand" href="#home">Moz Pizza Place</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -67,6 +66,9 @@
                     <li class="nav-item">
                       <a class="nav-link" href="#menu">Menu</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cart">Cart</a>
+                      </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#reviews">Reviews</a>
                       </li>
@@ -245,12 +247,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="orderModal"></h5>
+                    <h5 class="modal-title" id="orderModalH"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="modal-body">
-                    <form class="row g-3" id="thisForm">
+                    <form class="row g-3" id="form">
                         <div class="col-md-12 form-group p-2">
                             <div>Select Crust</div>
                             <div id="crust">
@@ -275,7 +277,7 @@
                             <div id="toppings">
                                 <div class="form-check form-check-inline" required>
                                     <input class="form-check-input" name="toppings" type="checkbox" id="extraCheese"
-                                        value="100">
+                                        value="120">
                                     <label class="form-check-label" for="extraCheese">Extra Cheese</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -284,7 +286,7 @@
                                     <label class="form-check-label" for="pepperoni">Pepperoni</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name="toppings" type="checkbox" id="bacon" value="100">
+                                    <input class="form-check-input" name="toppings" type="checkbox" id="bacon" value="150">
                                     <label class="form-check-label" for="bacon">Bacon</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -331,7 +333,7 @@
 
                         <div class="col-md-12 form-group p-2">
                             <label class="form-label" for="pizzaQuantity">Number of Pizza</label>
-                            <input type="number" class="form-control" id="pizzaQuantity" required min="1" max="100">
+                            <input type="number" class="form-control" id="pizzaQuantity" required value = "1" min="1" max="100">
                         </div>
 
                         <button type="button" class="btn btn-success" id="modalSubmit">Submit</button>
@@ -339,31 +341,31 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id ="formCancelBtn"data-bs-dismiss="modal">Form Button</button>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <!--Delivery Modal-->
+    <!--Delivery Selection Modal-->
     <button type="button" id ="deliveryBtn"class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deliveryModal">
     </button>
-      <div class="modal fade" id="deliveryModal" tabindex="-1" aria-labelledby="deliveryModal" aria-hidden="true">
+    <div class="modal fade" id="deliveryModal" tabindex="-1" aria-labelledby="deliveryModal" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-body">
               Delivery will cost an extra Ksh.200
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="deliveryProceed">Proceed</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" id="deliveryProceed">Checkout</button>
+                <button type="button" class="btn btn-danger" id ="deliveryCanceled"data-bs-dismiss="modal">Cancel</button>
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
-    <!--Delivery Cost-->
+    <!--Delivery Cost Modal-->
     <button type="button" class="btn btn-primary" id="pizzaDeliveryTotalBtn" data-bs-toggle="modal" data-bs-target="#pizzaDeliveryTotal">  
     </button>
     <div class="modal fade" id="pizzaDeliveryTotal" tabindex="-1" aria-labelledby="pizzaDeliveryTotal" aria-hidden="true">
@@ -373,13 +375,16 @@
                     <h5 class="modal-title" id="pizzaDeliveryTotalH">Thank Your For the Order</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body"></div>
+                <div class="modal-body content"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id = "closeOrderComplete">Order Complete</button>
+                </div>
             </div>
         </div>
     </div>
 
 
-    <section class="container-fluid reviews p-5" id="reviews">
+    <section class="container-fluid reviews p-5" id="reviews" >
         <h4 class="text-center p-3 fs-1">Client Reviews</h4>
         <div class="row">
 
