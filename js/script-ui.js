@@ -103,7 +103,9 @@ $(document).ready(function(){
         let size = $('input[name=size]:checked', 'form').val()
         let delivery = $('input[name=delivery]:checked', 'form').val()
         let quantity = $('#pizzaQuantity' , 'form').val() 
-        console.log(crust)
+        let pizzaPicked = new Pizza(crust, toppings, size, delivery, quantity)
+        console.log(pizzaPicked)
+        pizzaPicked.calculatePrice()
         $("form")[0].reset()
         $('#orderModal').modal('hide')
 
