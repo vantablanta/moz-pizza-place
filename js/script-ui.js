@@ -203,11 +203,16 @@ $(document).ready(function () {
                     $('form')[0].reset()
                 })
                 $("#closeOrderComplete").on('click', function () {
-                    $('form')[0].reset()
+                    window.location.href = 'cart.html'; // going to cart to dsiplay the below content
+                    $(".cartContent").htmls(
+                        `<p>Size: ${sizeName} </p>
+                        <p>Crust: ${crustName}</p>
+                        <p>Toppings: ${toppingsNames} </p>
+                        <p>Quantity of Pizza: ${quantity} </p>
+                        <p> Total Amount: ${costBd}</p>`)
+
                 })
-            let totalQuantity 
-            totalQuantity += quantity
-            console.log(totalQuantity)
+                
 
             }
         
