@@ -412,6 +412,9 @@ a{
 #pizzaDeliveryTotalBtn{
     display: none;
 }
+#deliveryInfo{
+    display: none;
+}
 
 
 

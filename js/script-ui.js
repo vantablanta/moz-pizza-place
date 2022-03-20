@@ -98,6 +98,7 @@ $(document).ready(function () {
         $('form')[0].reset()
     })
     $("#deliveryCanceled").on('click', function () {
+        //delivery canceled
 
     })
 
@@ -156,27 +157,40 @@ $(document).ready(function () {
             }
         })
         if (crustName == undefined || sizeName == undefined || toppingsNames == []) {
-            console.log("No inputs")
+            //cancel delivery
         } else {
            if (pizzaPicked.delivery == "true") {
                 $("#deliveryBtn").click() //ask to proceed with delivery or not
                 $("#deliveryProceed").on('click', function () {
-                    $("#pizzaDeliveryTotalBtn").click()
-                    $(".content").html(
-                        `
-                    <p>Size: ${sizeName}</p>
-                    <p>Crust: ${crustName}</p>
-                    <p>Toppings: ${toppingsNames} </p>
-                    <p>Quantity of Pizza: ${quantity} </p>
-                    <p> Total Order Payable: ${costBd}</p>
-                    <p>Delivery: Ksh 200 </p>
-                    <p>Total: ${cost}</p>`
-                    )
-                    $("#closeOrderComplete").on('click', function () {
-                        $('form')[0].reset()
+                    $("#deliveryInfo").click()
+                    $("#deliveryDetailsFormBtn").on("click", function(){
+                        $("#pizzaDeliveryTotalBtn").click()
+                        console.log("hey")
+                             $(".content").html(
+                                 `
+                             <p>Size: ${sizeName}</p>
+                             <p>Crust: ${crustName}</p>
+                             <p>Toppings: ${toppingsNames} </p>
+                             <p>Quantity of Pizza: ${quantity} </p>
+                             <p> Total Order Payable: ${costBd}</p>
+                             <p>Delivery: Ksh 200 </p>
+                             <p>Total: ${cost}</p>`
+                     )
+
                     })
 
 
+
+
+
+
+                    
+                  
+ 
+                    
+                    $("#closeOrderComplete").on('click', function () {
+                        $('form')[0].reset()
+                    })
                 })
             } else {
                 $("#pizzaDeliveryTotalBtn").click()
