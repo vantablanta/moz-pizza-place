@@ -16,6 +16,7 @@ $(document).ready(function(){
 
     $("#meat").mouseover(function(){
         $(this).addClass("menu-img")
+
         
     }) 
     $("#meat").mouseout(function(){
