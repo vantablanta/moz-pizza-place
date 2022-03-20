@@ -104,6 +104,7 @@ $(document).ready(function () {
 
 
     function formSubmit() {
+        
         let crust = $('input[name=crust]:checked', 'form').val()
         let toppings = new Array
         $('input[name=toppings]:checked', 'form').map(function () {
@@ -113,6 +114,7 @@ $(document).ready(function () {
         let delivery = $('input[name=delivery]:checked', 'form').val()
         let quantity = $('#pizzaQuantity', 'form').val()
         let pizzaPicked = new Pizza(crust, toppings, size, delivery, quantity)
+        
 
         let cost = pizzaPicked.calculatePrice()
         let costBd = cost - 200
@@ -157,7 +159,7 @@ $(document).ready(function () {
                 toppingsNames.push("Mushroom")
             }
         })
-        if (crustName == undefined || sizeName == undefined || toppingsNames == []) {
+        if (crustName == undefined || sizeName == undefined || toppingsNames == [] || delivery == undefined) {
             //cancel delivery
         } else {
             if (pizzaPicked.delivery == "true") {
@@ -171,12 +173,13 @@ $(document).ready(function () {
                             <p>Crust: ${crustName}</p>
                             <p>Toppings: ${toppingsNames} </p>
                             <p>Quantity of Pizza: ${quantity} </p>
-                            <p> Total Order Payable: ${costBd}</p>
+                            <p>Total Order Payable: ${costBd}</p>
+                            <p>Delivery Location: ${$("#inputAddress").val()}</p>
                             <p>Delivery: Ksh 200 </p>
                             <p>Total: ${cost}</p>`
                         )
                     })
-                    
+
                 })
                 $("#continueShopping").on('click', function () {
                     $('#pizzaDeliveryTotal').modal('hide');
@@ -202,12 +205,14 @@ $(document).ready(function () {
                 $("#closeOrderComplete").on('click', function () {
                     $('form')[0].reset()
                 })
+            let totalQuantity 
+            totalQuantity += quantity
+            console.log(totalQuantity)
 
             }
-
+        
         }
-
-
+       
     }
 
 
