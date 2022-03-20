@@ -102,6 +102,7 @@ $(document).ready(function () {
 
     })
 
+
     function formSubmit() {
         let crust = $('input[name=crust]:checked', 'form').val()
         let toppings = new Array
@@ -159,38 +160,30 @@ $(document).ready(function () {
         if (crustName == undefined || sizeName == undefined || toppingsNames == []) {
             //cancel delivery
         } else {
-           if (pizzaPicked.delivery == "true") {
+            if (pizzaPicked.delivery == "true") {
                 $("#deliveryBtn").click() //ask to proceed with delivery or not
                 $("#deliveryProceed").on('click', function () {
                     $("#deliveryInfo").click()
-                    $("#deliveryDetailsFormBtn").on("click", function(){
+                    $("#deliveryDetailsFormBtn").on("click", function () {
                         $("#pizzaDeliveryTotalBtn").click()
-                        console.log("hey")
-                             $(".content").html(
-                                 `
-                             <p>Size: ${sizeName}</p>
-                             <p>Crust: ${crustName}</p>
-                             <p>Toppings: ${toppingsNames} </p>
-                             <p>Quantity of Pizza: ${quantity} </p>
-                             <p> Total Order Payable: ${costBd}</p>
-                             <p>Delivery: Ksh 200 </p>
-                             <p>Total: ${cost}</p>`
-                     )
-
+                        $(".content").html(`
+                            <p>Size: ${sizeName}</p>
+                            <p>Crust: ${crustName}</p>
+                            <p>Toppings: ${toppingsNames} </p>
+                            <p>Quantity of Pizza: ${quantity} </p>
+                            <p> Total Order Payable: ${costBd}</p>
+                            <p>Delivery: Ksh 200 </p>
+                            <p>Total: ${cost}</p>`
+                        )
                     })
-
-
-
-
-
-
                     
-                  
- 
-                    
-                    $("#closeOrderComplete").on('click', function () {
-                        $('form')[0].reset()
-                    })
+                })
+                $("#continueShopping").on('click', function () {
+                    $('#pizzaDeliveryTotal').modal('hide');
+                    $('form')[0].reset()
+                })
+                $("#closeOrderComplete").on('click', function () {
+                    $('form')[0].reset()
                 })
             } else {
                 $("#pizzaDeliveryTotalBtn").click()
@@ -202,6 +195,10 @@ $(document).ready(function () {
                 <p>Quantity of Pizza: ${quantity} </p>
                 <p> Total Amount: ${costBd}</p>`
                 )
+                $("#continueShopping").on('click', function () {
+                    $('#pizzaDeliveryTotal').modal('hide');
+                    $('form')[0].reset()
+                })
                 $("#closeOrderComplete").on('click', function () {
                     $('form')[0].reset()
                 })

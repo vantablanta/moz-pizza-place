@@ -340,14 +340,13 @@
                             <input type="number" class="form-control" id="pizzaQuantity" required value="1" min="1"
                                 max="100">
                         </div>
-
-                        <button type="button" class="btn btn-success" id="modalSubmit">Submit</button>
+                        <button type="button" class="btn btn-success col-md-3" id="modalSubmit">Submit</button>
                     </form>
                 </div>
-
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" id="formCancelBtn" data-bs-dismiss="modal">Form
-                        Button</button>
+                    <button type="button" class="btn btn-danger" id="formCancelBtn" data-bs-dismiss="modal">
+                        Form Button
+                    </button>
                 </div>
             </div>
         </div>
@@ -366,7 +365,6 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" id="deliveryProceed">Checkout</button>
-
                     <button type="button" class="btn btn-danger" id="deliveryCanceled"
                         data-bs-dismiss="modal">Cancel</button>
                 </div>
@@ -383,11 +381,11 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="pizzaDeliveryTotalH">Thank Your For the Order</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title"></h5>
                 </div>
                 <div class="modal-body content"></div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="continueShopping">Add More</button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="closeOrderComplete">Order
                         Complete</button>
                 </div>
@@ -395,7 +393,8 @@
         </div>
     </div>
     <!--Delivery Info Modal-->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="deliveryInfo" data-bs-target="#exampleModal"></button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="deliveryInfo"
+        data-bs-target="#exampleModal"></button>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -405,27 +404,33 @@
                 </div>
                 <div class="modal-body">
                     <form class="row g-3">
+                        <h2 class="col-md-12">Delivery Details</h2>
                         <div class="col-md-4">
-                          <label for="inputEmail4" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="inputEmail4">
+                            <label for="inputName4" class="form-label">Name</label>
+                            <input type="name" class="form-control" id="inputName4">
                         </div>
                         <div class="col-md-4">
-                          <label for="inputPassword4" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="inputPassword4">
+                            <label for="inputEmail4" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4">
                         </div>
                         <div class="col-md-4">
                             <label for="inputPassword4" class="form-label">Number</label>
                             <input type="tel" class="form-control" id="inputPassword4">
-                          </div>
-                        <div class="col-md-6">
-                          <label for="inputAddress" class="form-label">Address</label>
-                          <input type="text" class="form-control" id="inputAddress" placeholder="Tom Mboya St Nrb">
                         </div>
                         <div class="col-md-6">
-                          <label for="inputCity" class="form-label">City</label>
-                          <input type="text" class="form-control" id="inputCity">
+                            <label for="inputAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Tom Mboya St Nrb">
                         </div>
-                      </form>
+                        <div class="col-md-6">
+                            <label for="inputCity" class="form-label">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-floating col-12">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                                style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Comments</label>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" id="deliveryDetailsFormBtn">Submit</button>
