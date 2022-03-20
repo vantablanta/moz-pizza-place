@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
-body{
-    margin: 0;
-    padding: 0;
+html body{
+    height: 100%;
     font-family: 'Fredoka', sans-serif;
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 /*preloader*/
 .preload-container{
@@ -35,14 +35,10 @@ body{
 .hero-container{
     background: url("../assets/bg.jpg");
     background-position: top center;
-    margin: 0 !important;
-    padding: 0 !important;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
 
-}
-/*nav-section*/
-.nav-section{
-    margin: 0 !important;
+
 }
 i{
     color: #ECA442;
@@ -51,11 +47,8 @@ i:hover{
     cursor: pointer;
     color: #CA2521;
 }
-.logo{
-    display: none;
-    position: absolute;
-}
 .hero-text{
+    position: relative;
     color: #ffffff;
     font-size: 3vw;
     text-align: center;
@@ -68,10 +61,12 @@ i:hover{
 .fa-angle-double-down{
     font-size: 5vw;
     text-align: center;
-    display: flex;
-    justify-content: center;
     animation: updown 500ms infinite alternate;
-    }
+}
+.logo{
+    width: 20vw;
+    height: 50vh;
+}
 @keyframes updown { 
     0%{
             transform: translate(0px,10px);
@@ -80,29 +75,18 @@ i:hover{
             transform: translate(0px,0px);
     }
 }
-.socials{
-    padding-left: 18% !important;
-    position: relative;
-    right: -2vw !important;
-}
-li{
-    padding: 2vw;
-    list-style-type: none;
-}
 a{
     text-decoration: none;
-    color: #ECA442;
 }
+
+
+
 .times{
     display: none;
     font-size: 50px;
     color: #ECA442;
 }
-.nav-menu{
-    display: none;
-    flex-direction: row-reverse;
-    padding-left: -10%;
-}
+
 .fa-bars:hover{
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
@@ -362,6 +346,9 @@ a{
     font-size: 13px;
     color: #fff
 }
+.credits a{
+    color: #ECA442;
+}
 #footer a:hover{
     color: #CA2521;
 }
@@ -440,6 +427,9 @@ a{
 #deliveryBtn{
     display: none;
 }
+#pizzaDeliveryTotalBtn{
+    display: none;
+}
 
 
 
@@ -456,9 +446,7 @@ a{
 
 
 @media screen  and (max-width: 772px){
-    .logo{
-        display: none;
-    }
+
 
 }
 @media screen  and (max-width: 575px){

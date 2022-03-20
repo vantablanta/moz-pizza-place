@@ -14,14 +14,13 @@ Pizza.prototype.calculatePrice = function(){
     function getSum(count, topping) {
         return count + parseInt(topping);
     }
-   totalCost = toppingsCost + parseInt(this.crust) + parseInt(this.size) + (this.quantity * parseInt(this.size))
-    console.log(totalCost)
-}
-Pizza.prototype.deliverySelected = function(){
+   totalCost = toppingsCost + parseInt(this.crust) + parseInt(this.size) + (this.quantity * parseInt(this.size))   
     if (this.delivery == "true"){
-            totalCost += 200
-            console.log(totalCost)
-        
+        totalCost + 200
+        return totalCost
+    }else {
+        return totalCost 
     }
 
 }
+    

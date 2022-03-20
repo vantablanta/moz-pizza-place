@@ -94,6 +94,9 @@ $(document).ready(function(){
         formSubmit(e => e.preventDefault())
 
     })
+
+
+
     function formSubmit(){
         let crust = $('input[name=crust]:checked', 'form').val()
         let toppings = new Array
@@ -104,18 +107,55 @@ $(document).ready(function(){
         let delivery = $('input[name=delivery]:checked', 'form').val()
         let quantity = $('#pizzaQuantity' , 'form').val() 
         let pizzaPicked = new Pizza(crust, toppings, size, delivery, quantity)
-        if(pizzaPicked.delivery == "true"){
-            $("#deliveryBtn").click()
-            pizzaPicked.calculatePrice()
-            pizzaPicked.deliverySelected()
+
+        let sizeName
+       
+       
+        
+
+        let cost = pizzaPicked.calculatePrice()
+        let costBd = cost - 200
+
+        if (pizzaPicked.delivery == "true") {
+            $("#deliveryBtn").click() //ask to proceed with delivery or not
+            $("#deliveryProceed").on('click', function(){
+                $("#pizzaDeliveryTotalBtn").click()
+                $("#pizzaDeliveryTotal .modal-body").html(
+                    `
+                    <ul>
+                        <li>Size: </li>
+                        <li>Crust: ${crustName}</li>
+                        <li>Topping: </li>
+                    </ul>
+                    <p>Quantity of Pizza: ${quantity} </p>
+                    <p> Total Order Payable: ${costBd}</p>
+                    <p>Delivery: Ksh 200 </p>
+                    <p>Total: ${cost}</p>
+                    </p>`
+                )
+            }) 
         }else{
-            pizzaPicked.calculatePrice() 
+            $(".modal-body").html(
+                `
+                <ul>
+                    <li>Size: </li>
+                    <li>Crust: </li>
+                    <li>Topping: </li>
+                </ul>
+                <p>Quantity of Pizza: ${quantity} </p>
+                <p> Total Order Payable: ${costBd}</p>
+                </p>`
+            )
+            $(".btn-close").on('click', function(){
+                $('.modal-body'). 
+                $('#pizzaDeliveryTotal').modal('hide')     
+            })
         }
-        $("form")[0].reset()
-        $('#orderModal').modal('hide')   
+        $("#thisForm").reset();
+        $('#orderModal').modal('hide') 
+
     }
-
-
+        
 
 
 })
