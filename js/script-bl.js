@@ -7,13 +7,21 @@ function Pizza(crust, toppings, size, delivery, quantity){
     this.quantity = quantity
 }
 
+let totalCost
 
 Pizza.prototype.calculatePrice = function(){
-    
     let toppingsCost = this.toppings.reduce(getSum, 0)
     function getSum(count, topping) {
         return count + parseInt(topping);
     }
-    let totalCost = toppingsCost + parseInt(this.crust) + parseInt(this.size) + (this.quantity * parseInt(this.size))
+   totalCost = toppingsCost + parseInt(this.crust) + parseInt(this.size) + (this.quantity * parseInt(this.size))
     console.log(totalCost)
+}
+Pizza.prototype.deliverySelected = function(){
+    if (this.delivery == "true"){
+            totalCost += 200
+            console.log(totalCost)
+        
+    }
+
 }

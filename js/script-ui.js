@@ -97,19 +97,22 @@ $(document).ready(function(){
     function formSubmit(){
         let crust = $('input[name=crust]:checked', 'form').val()
         let toppings = new Array
-        $('input[name=size]:checked', 'form').map(function(){
+        $('input[name=toppings]:checked', 'form').map(function(){
             toppings.push($(this).val() )
         })
         let size = $('input[name=size]:checked', 'form').val()
         let delivery = $('input[name=delivery]:checked', 'form').val()
         let quantity = $('#pizzaQuantity' , 'form').val() 
         let pizzaPicked = new Pizza(crust, toppings, size, delivery, quantity)
-        console.log(pizzaPicked)
-        pizzaPicked.calculatePrice()
+        if(pizzaPicked.delivery == "true"){
+            $("#deliveryBtn").click()
+            pizzaPicked.calculatePrice()
+            pizzaPicked.deliverySelected()
+        }else{
+            pizzaPicked.calculatePrice() 
+        }
         $("form")[0].reset()
-        $('#orderModal').modal('hide')
-
-       
+        $('#orderModal').modal('hide')   
     }
 
 

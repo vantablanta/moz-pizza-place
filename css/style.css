@@ -435,7 +435,11 @@ a{
     list-style-type: disc;
     line-height: 1;
     text-align: left;
-  }
+}
+
+#deliveryBtn{
+    display: none;
+}
 
 
 
