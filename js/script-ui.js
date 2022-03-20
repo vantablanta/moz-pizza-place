@@ -92,9 +92,9 @@ $(document).ready(function(){
 
     $("#modalSubmit").click( function(){
         formSubmit(e => e.preventDefault())
+
     })
     function formSubmit(){
-        
         let crust = $('input[name=crust]:checked', 'form').val()
         let toppings = new Array
         $('input[name=size]:checked', 'form').map(function(){
@@ -102,12 +102,10 @@ $(document).ready(function(){
         })
         let size = $('input[name=size]:checked', 'form').val()
         let delivery = $('input[name=delivery]:checked', 'form').val()
-        let quantity = $('#pizzaQuantity' , 'form').val()
-
-        console.log(quantity)
-
-
-        
+        let quantity = $('#pizzaQuantity' , 'form').val() 
+        console.log(crust)
+        $("form")[0].reset()
+        $('#orderModal').modal('hide')
 
        
     }
