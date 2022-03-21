@@ -31,7 +31,7 @@ Website for Moz Pizza Place. This is a local pizza vendor with ability to set de
 [MIT Licence](https://github.com/vantablanta/moz-pizza-place/blob/master/LICENSE)
 
 ## Live Site
-[Moz Pizza Place](vantablanta.github.io/moz-pizza-place/)
+[Moz Pizza Place](https://vantablanta.github.io/moz-pizza-place/)
 
 
 ## Support
