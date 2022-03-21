@@ -10,9 +10,6 @@ function preLoader (){
     
 }*/
 $(document).ready(function () {
-    $("#meat").on('click', function () {
-        // $(".modal").show()
-    })
 
     $("#meat").mouseover(function () {
         $(this).addClass("menu-img")
@@ -73,21 +70,27 @@ $(document).ready(function () {
 
     $(".orderBtn1").on('click', function () {
         $(".modal-title").text('Meat Pizza')
+        $(this).data('clicked', true);
     })
     $(".orderBtn2").on('click', function () {
         $(".modal-title").text('Hawaian Pizza')
+        $(this).data('clicked', true);
     })
     $(".orderBtn3").on('click', function () {
         $(".modal-title").text('Cheese Pizza')
+        $(this).data('clicked', true);
     })
     $(".orderBtn4").on('click', function () {
         $(".modal-title").text('Veggie Pizza')
+        $(this).data('clicked', true);
     })
     $(".orderBtn5").on('click', function () {
         $(".modal-title").text('BBQ Chicken Pizza')
+        $(this).data('clicked', true);
     })
     $(".orderBtn6").on('click', function () {
         $(".modal-title").text('Pepperoni Pizza')
+        $(this).data('clicked', true);
     })
 
     $("#modalSubmit").click(function () {
@@ -100,6 +103,9 @@ $(document).ready(function () {
     $("#deliveryCanceled").on('click', function () {
         //delivery canceled
 
+    })
+    $("#cartNav").on("click", function(){
+        $("#cartContentBtn").click()
     })
 
 
@@ -165,7 +171,7 @@ $(document).ready(function () {
             if (pizzaPicked.delivery == "true") {
                 $("#deliveryBtn").click() //ask to proceed with delivery or not
                 $("#deliveryProceed").on('click', function () {
-                    $("#deliveryInfo").click()
+                    $("#deliveryInfoBtn").click()
                     $("#deliveryDetailsFormBtn").on("click", function () {
                         $("#pizzaDeliveryTotalBtn").click()
                         $(".content").html(`
@@ -178,15 +184,68 @@ $(document).ready(function () {
                             <p>Delivery: Ksh 200 </p>
                             <p>Total: ${cost}</p>`
                         )
+                        
                     })
-
+                $('form')[0].reset()
                 })
                 $("#continueShopping").on('click', function () {
                     $('#pizzaDeliveryTotal').modal('hide');
                     $('form')[0].reset()
+
+                    $("#closeOrderComplete").on('click', function () {
+                        $("#cartContentBtn").click()
+                        let pizzaName;
+                        if($('.orderBtn1').data('clicked')) {
+                            pizzaName = "Meat Pizza"
+                        }else if($('.orderBtn2').data('clicked')) {
+                            pizzaName = "Hawaian Pizza"
+                        }else if($('.orderBtn3').data('clicked')) {
+                            pizzaName = "Cheese Pizza"
+                        }else if($('.orderBtn4').data('clicked')) {
+                            pizzaName = "Veggie Pizza"
+                        }else if($('.orderBtn5').data('clicked')) {
+                            pizzaName = "BBQ Chicken Pizza"
+                        }else if($('.orderBtn1').data('clicked')) {
+                            pizzaName = "Pepperoni Pizza"
+                        }
+                        $(".cartContent").append(
+                            `
+                                <tr>
+                                <td>${pizzaName}</td>
+                                <td>${quantity}</td>
+                                <td>Delivery Inclusive: ${cost}</td>
+                                </tr>
+                        `
+                        )
+                        $('form')[0].reset()
+                    })
                 })
                 $("#closeOrderComplete").on('click', function () {
-                    $('form')[0].reset()
+                    $("#cartContentBtn").click()
+                        let pizzaName;
+                        if($('.orderBtn1').data('clicked')) {
+                            pizzaName = "Meat Pizza"
+                        }else if($('.orderBtn2').data('clicked')) {
+                            pizzaName = "Hawaian Pizza"
+                        }else if($('.orderBtn3').data('clicked')) {
+                            pizzaName = "Cheese Pizza"
+                        }else if($('.orderBtn4').data('clicked')) {
+                            pizzaName = "Veggie Pizza"
+                        }else if($('.orderBtn5').data('clicked')) {
+                            pizzaName = "BBQ Chicken Pizza"
+                        }else if($('.orderBtn1').data('clicked')) {
+                            pizzaName = "Pepperoni Pizza"
+                        }
+                        $(".cartContent").append(
+                            `
+                                <tr>
+                                <td>${pizzaName}</td>
+                                <td>${quantity}</td>
+                                <td>Delivery Inclusive: ${cost}</td>
+                                </tr>
+                        `
+                        )
+                        $('form')[0].reset()
                 })
             } else {
                 $("#pizzaDeliveryTotalBtn").click()
@@ -198,22 +257,67 @@ $(document).ready(function () {
                 <p>Quantity of Pizza: ${quantity} </p>
                 <p> Total Amount: ${costBd}</p>`
                 )
+                $('form')[0].reset()
                 $("#continueShopping").on('click', function () {
                     $('#pizzaDeliveryTotal').modal('hide');
                     $('form')[0].reset()
+
+                    $("#closeOrderComplete").on('click', function () {
+                    $("#cartContentBtn").click()
+                    let pizzaName;
+                    if($('.orderBtn1').data('clicked')) {
+                        pizzaName = "Meat Pizza"
+                    }else if($('.orderBtn2').data('clicked')) {
+                        pizzaName = "Hawaian Pizza"
+                    }else if($('.orderBtn3').data('clicked')) {
+                        pizzaName = "Cheese Pizza"
+                    }else if($('.orderBtn4').data('clicked')) {
+                        pizzaName = "Veggie Pizza"
+                    }else if($('.orderBtn5').data('clicked')) {
+                        pizzaName = "BBQ Chicken Pizza"
+                    }else if($('.orderBtn1').data('clicked')) {
+                        pizzaName = "Pepperoni Pizza"
+                    }
+                    $(".cartContent").append(
+                        `
+                            <tr>
+                            <td>${pizzaName}</td>
+                            <td>${quantity}</td>
+                            <td>${costBd}</td>
+                            </tr>
+                        `
+                    )
+                    $('form')[0].reset()
+                    })
                 })
                 $("#closeOrderComplete").on('click', function () {
-                    window.location.href = 'cart.html'; // going to cart to dsiplay the below content
-                    $(".cartContent").htmls(
-                        `<p>Size: ${sizeName} </p>
-                        <p>Crust: ${crustName}</p>
-                        <p>Toppings: ${toppingsNames} </p>
-                        <p>Quantity of Pizza: ${quantity} </p>
-                        <p> Total Amount: ${costBd}</p>`)
-
+                    $("#cartContentBtn").click()
+                    let pizzaName;
+                    if($('.orderBtn1').data('clicked')) {
+                        pizzaName = "Meat Pizza"
+                    }else if($('.orderBtn2').data('clicked')) {
+                        pizzaName = "Hawaian Pizza"
+                    }else if($('.orderBtn3').data('clicked')) {
+                        pizzaName = "Cheese Pizza"
+                    }else if($('.orderBtn4').data('clicked')) {
+                        pizzaName = "Veggie Pizza"
+                    }else if($('.orderBtn5').data('clicked')) {
+                        pizzaName = "BBQ Chicken Pizza"
+                    }else if($('.orderBtn1').data('clicked')) {
+                        pizzaName = "Pepperoni Pizza"
+                    }
+                    $(".cartContent").append(
+                        `
+                            <tr>
+                            <td>${pizzaName}</td>
+                            <td>${quantity}</td>
+                            <td>${costBd}</td>
+                            </tr>
+                    `
+                    )
+                    $('form')[0].reset()
                 })
-                
-
+                $('form')[0].reset()
             }
         
         }

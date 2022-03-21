@@ -60,57 +60,13 @@ i:hover{
 a{
     text-decoration: none;
 }
-
-
-
-.times{
-    display: none;
-    font-size: 50px;
-    color: #ECA442;
+.marketicon {
+    padding: .5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
 }
 
-.fa-bars:hover{
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
-@keyframes shake {
-    10%, 90% {
-        transform: translate3d(-1px, 0, 0);
-    }
-    20%, 80% {
-        transform: translate3d(2px, 0, 0);
-    }
-    30%, 50%, 70% {
-        transform: translate3d(-4px, 0, 0);
-    }
-    40%, 60% {
-        transform: translate3d(4px, 0, 0);
-    }
-}
-.times:hover{
-    color: #CA2521;
-    cursor: pointer;
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
-@keyframes shake {
-    10%, 90% {
-        transform: translate3d(-1px, 0, 0);
-     }
-    20%, 80% {
-        transform: translate3d(2px, 0, 0);
-    }
-    30%, 50%, 70% {
-        transform: translate3d(-4px, 0, 0);
-    }
-    40%, 60% {
-        transform: translate3d(4px, 0, 0);
-    }
-}
 .reviews{
     background-color: #A5A79A;
     color: #000000;
@@ -412,7 +368,10 @@ a{
 #pizzaDeliveryTotalBtn{
     display: none;
 }
-#deliveryInfo{
+#deliveryInfoBtn{
+    display: none;
+}
+#cartContentBtn{
     display: none;
 }
 

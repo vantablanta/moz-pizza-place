@@ -70,7 +70,7 @@
                             <a class="nav-link" href="#menu">Menu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="cart.html">Cart</a>
+                            <a class="nav-link" id ="cartNav" >Cart</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#reviews">Reviews</a>
@@ -95,6 +95,46 @@
 
 
         </div>
+    </section>
+
+    <section class="market" id="market">
+        <div class="container-fluid text-center pt-5 pb-5" style="background-color: #f5f5f5;">
+          <div class="row pt-5">
+            <div class="col-lg-4 col-md-12 pb-md-5 mb-3">
+                <div class="icons">
+                  <div class="text-dark mx-4">
+                    <i class="fa fa-phone fs-1" aria-hidden="true"></i>
+                  </div>
+                  <div class="marketcontent">
+                    <h5 class="fw-bold">Available 24/7</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-12 pb-md-5 mb-3">
+                <div class="icons">
+                  <div class="text-dark mx-4">
+                    <i class="fa fa-truck fs-1" aria-hidden="true"></i>
+                  </div>
+                  <div class="marketcontent">
+                    <h5 class="fw-bold">Fast  Delivery</h5>
+                  </div>
+                </div>
+              </div>
+
+            <div class="col-lg-4 col-md-12 pb-md-5">
+              <div class="icons">
+                <div class="text-dark mx-4">
+                  <i class="fa fa-money fs-1" aria-hidden="true"></i>
+                </div>
+                <div class="marketcontent">
+                  <h5 class="fw-bold">Affordable</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
     </section>
 
     <section class="container-fluid menu pt-5 m-3" id="menu">
@@ -345,7 +385,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" id="formCancelBtn" data-bs-dismiss="modal">
-                        Form Button
+                        Cancel
                     </button>
                 </div>
             </div>
@@ -392,9 +432,9 @@
         </div>
     </div>
     <!--Delivery Info Modal-->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="deliveryInfo"
-        data-bs-target="#exampleModal"></button>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="deliveryInfoBtn"
+        data-bs-target="#deliveryInfo"></button>
+    <div class="modal fade" id="deliveryInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -439,6 +479,44 @@
             </div>
         </div>
     </div>
+
+    <!--Cart Modal-->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="cartContentBtn" data-bs-target="#exampleModal">
+        Cart Modal
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Your Cart</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody class=" cartContent">
+
+                        </tbody>
+
+                   </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
     <section class="container-fluid reviews p-5" id="reviews">
         <h4 class="text-center p-3 fs-1">Client Reviews</h4>
         <div class="row">
