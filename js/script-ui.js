@@ -94,7 +94,7 @@ $(document).ready(function () {
     })
 
     $("#modalSubmit").click(function () {
-        formSubmit(e => e.preventDefault())
+        formSubmit()
 
     })
     $('#formCancelBtn').on('click', function () {
@@ -192,6 +192,9 @@ $(document).ready(function () {
                     $("#deliveryDetailsFormBtn").on("click", function () {
                         $("#pizzaDeliveryTotalBtn").click()
                         $(".content").html(`
+                            <h2>Thank You </h2>
+                            <p>Delivery is underway</p>
+                            <hr>
                             <p>Size: ${sizeName}</p>
                             <p>Crust: ${crustName}</p>
                             <p>Toppings: ${toppingsNames} </p>
@@ -203,10 +206,11 @@ $(document).ready(function () {
                         )
                         $('form')[0].reset()
                     })
-                    $(this).closest('tr').empty(); 
                 }) //add more
                 $("#continueShopping").on('click', function () {
                     $('form')[0].reset()
+                    $('#pizzaDeliveryTotal').modal('hide')
+
                         $(".cartContent").append(
                             `
                             <tr>
@@ -216,14 +220,13 @@ $(document).ready(function () {
                             </tr>
                          `
                         )
-                    $(this).closest('tr').empty(); 
-                    $('#pizzaDeliveryTotal').modal('hide');
                 })
                 //checkout
                 $("#closeOrderComplete").on('click', function () {
                     $('form')[0].reset()
                     $("#cartContentBtn").click()
-                    $(".cartContent").append(
+                    
+                    $(".cartContent").preppend(
                         `
                             <tr>
                             <td>${pizzaName}</td>
@@ -232,13 +235,12 @@ $(document).ready(function () {
                             </tr>
                         `
                     )
-                    $(this).closest('tr').empty(); 
                 })
-                $(this).closest('tr').empty(); 
+
             } else {
                 $("#pizzaDeliveryTotalBtn").click()
                 $('form')[0].reset()
-                $(".content").html(
+                $(".content").append(
                     `
                 <p>Size: ${sizeName} </p>
                 <p>Crust: ${crustName}</p>
@@ -258,8 +260,7 @@ $(document).ready(function () {
                         </tr>
                      `
                     )
-                    $(this).closest('tr').empty(); 
-                    $('#pizzaDeliveryTotal').modal('hide');
+                $('#pizzaDeliveryTotal').modal('hide');
 
                 //checkout
                 $("#closeOrderComplete").on('click', function () {
@@ -267,14 +268,13 @@ $(document).ready(function () {
                     $("#cartContentBtn").click()
                     $(".cartContent").append(
                         `
-                        <tr>
+                        <tr class = "tableRow">
                             <td>${pizzaName}</td>
                             <td>${quantity}</td>
                             <td>${costBd}</td>
                         </tr>
                      `
                     )
-                    $(this).closest('tr').empty();  
                 })
                 $('form')[0].reset()
             })
