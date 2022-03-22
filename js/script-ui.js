@@ -226,7 +226,7 @@ $(document).ready(function () {
                     $('form')[0].reset()
                     $("#cartContentBtn").click()
                     
-                    $(".cartContent").preppend(
+                    $(".cartContent").append(
                         `
                             <tr>
                             <td>${pizzaName}</td>
