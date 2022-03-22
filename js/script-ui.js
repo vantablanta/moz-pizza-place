@@ -210,7 +210,6 @@ $(document).ready(function () {
                 $("#continueShopping").on('click', function () {
                     $('form')[0].reset()
                     $('#pizzaDeliveryTotal').modal('hide')
-
                         $(".cartContent").append(
                             `
                             <tr>
@@ -224,8 +223,7 @@ $(document).ready(function () {
                 //checkout
                 $("#closeOrderComplete").on('click', function () {
                     $('form')[0].reset()
-                    $("#cartContentBtn").click()
-                    
+                    $("#cartContentBtn").click()          
                     $(".cartContent").append(
                         `
                             <tr>
@@ -250,7 +248,7 @@ $(document).ready(function () {
                 )
                 // add
                 $("#continueShopping").on('click', function () {
-                    $('form')[0].reset()
+                    
                     $(".cartContent").append(
                         `
                         <tr>
@@ -259,9 +257,10 @@ $(document).ready(function () {
                             <td>${costBd}</td>
                         </tr>
                      `
-                    )
-                $('#pizzaDeliveryTotal').modal('hide');
-
+                    ) 
+                $('form')[0].reset()
+                $('#pizzaDeliveryTotal').modal('hide')
+                })
                 //checkout
                 $("#closeOrderComplete").on('click', function () {
                     $('form')[0].reset()
@@ -275,15 +274,16 @@ $(document).ready(function () {
                         </tr>
                      `
                     )
-                })
+                
                 $('form')[0].reset()
-            })
+                })
+            }
         }
     }
         
 
     
-    }
+    
 
 })
 
